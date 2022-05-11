@@ -1,4 +1,5 @@
 import sys
+from collections import Counter
 # height = [0,1,0,2,1,0,1,3,2,1,2,1]
 height = [9,8,7,6,7,8,9]
 left = 0
@@ -6,6 +7,22 @@ right = len(height) - 1
 cnt = 0
 max_left = height[left]
 max_right = height[right]
+max_height = max(height)
+for h in range(max_height):
+    left = 0
+    right = len(height)-1
+    while height[left] <= h or height[right] <= h:
+        if left == right == h:
+            break
+        if height[left] <= h:
+            left += 1
+        elif height[right] <= h:
+            right -= 1
+    height = height[left:right+1]
+    cnt += sum(y <= h for y in height)
+print(cnt)
+        
+        
 
 #스택
 # stack = []
@@ -32,17 +49,17 @@ max_right = height[right]
 # print(cnt)
 
 # 정석 풀이(투포인트)
-if not height:
-    print(0)
-while left < right:
-    max_left = max(max_left, height[left])
-    max_right = max(max_right, height[right])
+# if not height:
+#     print(0)
+# while left < right:
+#     max_left = max(max_left, height[left])
+#     max_right = max(max_right, height[right])
     
-    if max_left <= max_right:
-        cnt += max_left - height[left]
-        left += 1
-    else:
-        cnt += max_right  - height[right]
-        right -= 1
-print(cnt)
+#     if max_left <= max_right:
+#         cnt += max_left - height[left]
+#         left += 1
+#     else:
+#         cnt += max_right  - height[right]
+#         right -= 1
+# print(cnt)
 
