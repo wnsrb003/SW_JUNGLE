@@ -1,5 +1,7 @@
 # SW_JUNGLE
-SW정글 부트캠프
+SW정글 부트캠프 \
+(정글 개발일지)[https://coffee-fowl-284.notion.site/SW-b0329e2c119c49c28c91b1ca2d0af6ba]
+
 
 기간 : 2022.03.28 ~ 2022.08.05
 
